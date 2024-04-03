@@ -8,7 +8,7 @@
 public class Van extends GroundTransportation
 {
     private int packages;
-    public Van(String plate)
+    public Van(String plate, int packages)
     {
        super(plate);
        this.packages = packages;
