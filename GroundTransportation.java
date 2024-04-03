@@ -5,7 +5,7 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class GroundTransportation
+public class GroundTransportation extends Transport
 {
     private String licensePlate;
     private final double time = 0.3;
@@ -14,6 +14,16 @@ public class GroundTransportation
     {
         super();
         this.licensePlate = licensePlate;
+    }
+    
+    public String getLicensePlate()
+    {
+        return licensePlate;
+    }
+    
+    public void setLicensePlate(String newPlate)
+    {
+        licensePlate = newPlate;
     }
 
 }
