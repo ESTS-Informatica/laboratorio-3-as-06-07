@@ -48,6 +48,7 @@ public class AirTransportation extends Transport
         return "Air Transport";
     }
     
+    @Override
     public String toString()
     {
         StringBuilder sb = new StringBuilder();
