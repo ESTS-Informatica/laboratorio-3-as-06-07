@@ -16,7 +16,6 @@ public class ShippingCompany extends  HashSet<Transport>
     {
         this.name = name;
         inService = new ArrayList();
-        transports = new ArrayList();
     }
 
     public String getName()
@@ -26,12 +25,12 @@ public class ShippingCompany extends  HashSet<Transport>
     
     public void addTransport(Transport t)
     {
-        transports.add(t);
+        this.add(t);
     }
     
     public void makeTransportation(String id, String origin, String dest, int price)
     {
-        for(Transport t: transports)
+        for(Transport t: this)
         {
             if(t.getId().equals(id) && t.isAvailable())
             {
@@ -40,7 +39,7 @@ public class ShippingCompany extends  HashSet<Transport>
                 t.setPrice(price);
                 t.setAvailable(false);
                 inService.add(t);
-                transports.remove(t);
+                this.remove(t);
             }
         }
     }
@@ -60,7 +59,7 @@ public class ShippingCompany extends  HashSet<Transport>
     public String toString()
     {
         StringBuilder sb = new StringBuilder();
-        for (Transport t: transports) {
+        for (Transport t: this) {
           sb.append(t.toString());
         }
         return sb.toString();
